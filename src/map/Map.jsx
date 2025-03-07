@@ -92,7 +92,7 @@ function Map({ data, nextImage, fetchNextImage }) {
         {answered ? (
           <>
             <Marker
-              icon={custMarker}
+              icon={customMarker}
               position={[
                 nextImage?.lat !== undefined && nextImage?.lat,
                 nextImage?.long !== undefined && nextImage?.long,
