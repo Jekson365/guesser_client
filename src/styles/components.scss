@@ -1,0 +1,17 @@
+@import "./config.scss";
+@import url("https://fonts.googleapis.com/css2?family=Lilita+One&family=Sigmar&display=swap");
+
+.counter-container {
+  .score {
+    color: $primary-green-light;
+    font-size: 100px;
+    font-family: "Lilita One", sans-serif;
+  }
+}
+
+
+.result-score {
+    color: $primary-green-light;
+    font-family: "Lilita One", sans-serif;
+    font-size: 80px;
+}

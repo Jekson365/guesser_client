@@ -1,0 +1,82 @@
+@import url("//cdn.web-fonts.ge/fonts/bpg-web-001-caps/css/bpg-web-001-caps.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Lilita+One&family=Sigmar&display=swap");
+
+@import "./config.scss";
+
+.top-navigation-container {
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  z-index: 1000;
+  .primary-button {
+    border: 0;
+    padding: 0;
+    width: fit-content;
+    padding: 0 20px;
+    height: 40px;
+    transition: 0.3s;
+    cursor: pointer;
+    border-radius: 40px;
+  }
+  .km {
+    padding-top: 3px;
+    font-family: "BPG WEB 001 Caps", sans-serif;
+    background-color: $primary-red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+  }
+}
+
+.navigations-container {
+  position: absolute;
+  bottom: 50px;
+  right: 40%;
+  background-color: white;
+  padding: 10px;
+  border-radius: 40px;
+  z-index: 1000;
+
+  .primary-button {
+    border: 0;
+    padding: 0;
+    width: fit-content;
+    padding: 0 20px;
+    height: 40px;
+    transition: 0.3s;
+    cursor: pointer;
+    border-radius: 40px;
+  }
+  .best {
+    font-family: "BPG WEB 001 Caps", sans-serif;
+    background-color: $primary-red;
+    color: white;
+  }
+  .question-counter {
+    background-color: $primary-yellow;
+    font-family: "Lilita One", sans-serif;
+    color: white;
+  }
+  .confrim {
+    background-color: $primary-red;
+    font-family: "BPG WEB 001 Caps", sans-serif;
+    color: white;
+    &:hover {
+      color: $primary-red;
+      background-color: white;
+      border: 3px solid $primary-red;
+    }
+  }
+  .score {
+    min-width: 100px;
+    font-family: "Lilita One", sans-serif;
+    letter-spacing: 3px;
+    display: flex;
+    color: $primary-green;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    background-color: transparent;
+  }
+}

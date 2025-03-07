@@ -1,0 +1,27 @@
+@import "./config.scss";
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  position: relative;
+}
+
+.leaflet-left {
+  left: 360px !important;
+}
+.primary-button {
+  border: 0;
+  padding: 0;
+  width: fit-content;
+  padding: 0 20px;
+  height: 40px;
+  transition: 0.3s;
+  cursor: pointer;
+  border-radius: 40px;
+}
+.confrim {
+  background-color: $primary-red;
+  font-family: "BPG WEB 001 Caps", sans-serif;
+  color: white;
+}
