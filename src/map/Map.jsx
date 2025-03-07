@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import L from "leaflet";
 import { useState } from "react";
 import {
   MapContainer,
@@ -11,6 +12,7 @@ import {
 import "leaflet/dist/leaflet.css";
 import Navigations from "../main/navaigations/Navigations";
 import useAnswer from "../hooks/images/useAnswer";
+import custMarker from "./image.png";
 
 function ClickableMap({ onClick }) {
   useMapEvents({
@@ -21,6 +23,12 @@ function ClickableMap({ onClick }) {
   return null;
 }
 function Map({ data, nextImage, fetchNextImage }) {
+  const customMarker = new L.Icon({
+    iconUrl: custMarker,
+    iconSize: [32, 32], // Size of the icon
+    iconAnchor: [16, 32], // Anchor point of the icon (relative to the icon size)
+    popupAnchor: [0, -32], // Position of the popup relative to the icon
+  });
   const [answered, setAnswered] = useState(false);
   const [answerParams, setAnswerParams] = useState({});
   const [marker, setMarker] = useState(null);
@@ -71,7 +79,7 @@ function Map({ data, nextImage, fetchNextImage }) {
         <ClickableMap onClick={handleMapClick} />
 
         {marker ? (
-          <Marker position={marker}>
+          <Marker position={marker} icon={customMarker}>
             <Popup>
               Latitude: {marker.lat.toFixed(4)}, Longitude:{" "}
               {marker.lng.toFixed(4)}
@@ -84,6 +92,7 @@ function Map({ data, nextImage, fetchNextImage }) {
         {answered ? (
           <>
             <Marker
+              icon={custMarker}
               position={[
                 nextImage?.lat !== undefined && nextImage?.lat,
                 nextImage?.long !== undefined && nextImage?.long,
