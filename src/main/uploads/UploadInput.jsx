@@ -21,7 +21,7 @@ function UploadInput({ marker, setFormData, formData }) {
   };
   const handleSubmit = (e) => {
     e.preventDefault()
-    let params = { ...formData, lng: marker.lng, lat: marker.lat };
+    let params = { ...formData, long: marker.lng, lat: marker.lat };
     upload(params);
   };
   useEffect(() => {
