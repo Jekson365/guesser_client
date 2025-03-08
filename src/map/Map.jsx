@@ -67,6 +67,7 @@ function Map({ data, nextImage, fetchNextImage }) {
         handleSubmit={handleSubmit}
       />
       <MapContainer
+        className="map-container"
         zoom={3}
         center={[45, 45]}
         style={{ height: "100vh", width: "100%" }}

@@ -7,8 +7,10 @@ body {
   position: relative;
 }
 
-.leaflet-left {
-  left: 360px !important;
+.map-container  {
+  .leaflet-left {
+    left: 360px !important;
+  }
 }
 .primary-button {
   border: 0;

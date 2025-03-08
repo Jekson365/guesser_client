@@ -1,0 +1,22 @@
+@import "./config.scss";
+@import url("//cdn.web-fonts.ge/fonts/bpg-web-001-caps/css/bpg-web-001-caps.min.css");
+
+.upload-input {
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+
+  input {
+    outline: 0;
+    padding: 10px 5px;
+  }
+  button {
+    background-color: $primary-green;
+    color: white;
+    border: 0;
+    outline: 0;
+    padding: 10px 0;
+    cursor: pointer;
+    font-family: "BPG WEB 001 Caps", sans-serif;
+  }
+}

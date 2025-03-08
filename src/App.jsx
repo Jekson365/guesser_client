@@ -4,27 +4,20 @@ import "./styles/index.scss";
 import Gallery from "./main/gallery/Gallery";
 import useLoadImages from "./hooks/images/useLoadImages";
 import useNextImage from "./hooks/images/useNextImage";
-import './styles/components.scss'
+import "./styles/components.scss";
+import MainMap from "./map/MainMap";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Upload from "./main/uploads/Upload";
 
 function App() {
-  const { result, loadImages } = useLoadImages();
-  const { nextImage, fetchNextImage } = useNextImage();
-
-  useEffect(() => {
-    const fetch = async () => {
-      await loadImages();
-      await fetchNextImage();
-    };
-    fetch();
-  }, []);
   return (
     <>
-      <Gallery nextImage={nextImage} />
-      <Map
-        data={result}
-        nextImage={nextImage}
-        fetchNextImage={fetchNextImage}
-      />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<MainMap />} />
+          <Route path="/upload" element={<Upload />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
