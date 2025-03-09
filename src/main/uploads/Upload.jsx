@@ -33,14 +33,14 @@ function Upload() {
   return (
     <>
       <Grid container>
-        <Grid item xs={4}>
+        <Grid item xs={3}>
           <UploadInput
             formData={formData}
             setFormData={setFormData}
             marker={marker}
           />
         </Grid>
-        <Grid item xs={8}>
+        <Grid item xs={9}>
           <MapContainer
             center={[51.505, -0.09]}
             zoom={13}

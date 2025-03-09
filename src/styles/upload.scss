@@ -19,4 +19,13 @@
     cursor: pointer;
     font-family: "BPG WEB 001 Caps", sans-serif;
   }
+  .get-back-button {
+    padding: 10px 20px;
+    a {
+
+      text-decoration: none;
+      color: white;
+    }
+    background-color: $primary-red;
+  }
 }

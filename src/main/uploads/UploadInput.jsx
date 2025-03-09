@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { Box, Stack } from "@mui/material";
+import { Box, Link, Stack, Typography } from "@mui/material";
 import "../../styles/upload.scss";
 import useUploadImage from "../../hooks/images/useUploadImage";
 
 function UploadInput({ marker, setFormData, formData }) {
   const [preview, setPreview] = useState(null);
+  const [message, setMessage] = useState(null);
+
   const { upload } = useUploadImage();
 
   const handleChange = (e) => {
@@ -19,14 +21,19 @@ function UploadInput({ marker, setFormData, formData }) {
       setPreview(URL.createObjectURL(file));
     }
   };
-  const handleSubmit = (e) => {
-    e.preventDefault()
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setMessage(null);
     let params = { ...formData, long: marker.lng, lat: marker.lat };
-    upload(params);
+    try {
+      await upload(params);
+      setMessage({ type: "success", text: "ფოტო ატვირთულია" });
+      setFormData({});
+    } catch (err) {
+      setMessage({ type: "danger", text: "error" });
+      throw err;
+    }
   };
-  useEffect(() => {
-    console.log(formData);
-  }, [formData]);
   return (
     <Box>
       <Box
@@ -47,18 +54,24 @@ function UploadInput({ marker, setFormData, formData }) {
             <input type="file" name="Image" onChange={handleImageChange} />
             <input
               type="text"
-              placeholder="name"
+              placeholder="Camera"
               name="TookBy"
               onChange={handleChange}
             />
-{/*             
+            <input
+              type="text"
+              placeholder="name"
+              name="Sender.Name"
+              value={formData.name}
+              onChange={handleChange}
+            />
             <input
               type="text"
               placeholder="surname"
-              name="surname"
+              name="Sender.Surname"
               value={formData.surname}
               onChange={handleChange}
-            /> */}
+            />
             <Stack direction="row" justifyContent="space-between" gap="10px">
               <input
                 type="text"
@@ -77,8 +90,14 @@ function UploadInput({ marker, setFormData, formData }) {
             <button type="submit" onClick={handleSubmit}>
               ატვირთვა
             </button>
+            <Box mt={3}>
+              {message && <Typography mt={2}>{message.text}</Typography>}
+            </Box>
           </Stack>
         </form>
+            <button className="get-back-button">
+              <Link href="/">დაბრუნება</Link>
+            </button>
       </Box>
     </Box>
   );

@@ -81,10 +81,6 @@ function Map({ data, nextImage, fetchNextImage }) {
 
         {marker ? (
           <Marker position={marker} icon={customMarker}>
-            <Popup>
-              Latitude: {marker.lat.toFixed(4)}, Longitude:{" "}
-              {marker.lng.toFixed(4)}
-            </Popup>
           </Marker>
         ) : (
           <></>

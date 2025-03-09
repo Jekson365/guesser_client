@@ -32,7 +32,8 @@
 .navigations-container {
   position: absolute;
   bottom: 50px;
-  right: 40%;
+  right: 50%;
+  transform: translate(50%,0);
   background-color: white;
   padding: 10px;
   border-radius: 40px;

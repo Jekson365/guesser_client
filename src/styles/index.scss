@@ -12,9 +12,16 @@ body {
     left: 360px !important;
   }
 }
+.st-green {
+  margin-top: 10px;
+  font-family: "BPG WEB 001 Caps", sans-serif;
+  background-color: $primary-green;
+  color: white;
+}
 .primary-button {
   border: 0;
   padding: 0;
+  z-index: 1000;
   width: fit-content;
   padding: 0 20px;
   height: 40px;

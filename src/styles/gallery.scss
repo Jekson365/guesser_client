@@ -5,15 +5,13 @@
   position: absolute;
   max-width: 350px;
   width: 100%;
-  box-shadow: 0 0 100px 100px rgba(0, 0, 0, 0.375);
-  background-color: white;
-  // height: 100%;
   z-index: 1000;
   overflow: auto;
   &::-webkit-scrollbar {
     width: 0;
   }
   .gallery-box {
+    background-color: white;
     padding: 10px;
     .image-cover {
       height: 200px;

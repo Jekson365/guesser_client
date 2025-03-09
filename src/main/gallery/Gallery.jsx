@@ -1,6 +1,6 @@
 import React, { createContext, useEffect, useState } from "react";
 import "../../styles/gallery.scss";
-import { Box, Stack } from "@mui/material";
+import { Box, Link, Stack, Typography } from "@mui/material";
 import CurrentImage from "./CurrentImage";
 import { BASE } from "../../api/Api";
 
@@ -12,7 +12,9 @@ function Gallery({ nextImage }) {
   const handleCurrentImage = () => {
     setCurrentImageOpen(true);
   };
-
+  useEffect(() => {
+    console.log(nextImage);
+  }, []);
   return (
     <>
       <CurrentImageContext.Provider>
@@ -28,8 +30,31 @@ function Gallery({ nextImage }) {
             <div className="image-cover" onClick={handleCurrentImage}>
               <img src={BASE + "/images/" + nextImage?.path} />
             </div>
+            <Stack direction={"row"}>
+              <Typography>
+                <span style={{ fontSize: "15px" }}>გამომგზავნი </span>
+                {nextImage?.sender?.name} {nextImage?.sender?.surname}
+              </Typography>
+            </Stack>
+            <Stack direction={"row"}>
+              <Typography>
+                <span style={{ fontSize: "15px" }}>კამერა:</span>{" "}
+                {nextImage?.tookBy}
+              </Typography>
+            </Stack>
           </Stack>
         </Box>
+        <button className="primary-button st-green">
+          <Link
+            style={{
+              color: "white",
+              textDecoration: "none",
+            }}
+            href={"/upload"}
+          >
+            ფოტოს გაგზავნა
+          </Link>
+        </button>
       </div>
     </>
   );
