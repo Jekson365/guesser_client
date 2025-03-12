@@ -29,6 +29,7 @@ function UploadInput({ marker, setFormData, formData }) {
       await upload(params);
       setMessage({ type: "success", text: "ფოტო ატვირთულია" });
       setFormData({});
+      window.location.reload()
     } catch (err) {
       setMessage({ type: "danger", text: "error" });
       throw err;

@@ -27,9 +27,6 @@ function Upload() {
     setMarker(pr);
   };
 
-  useEffect(() => {
-    console.log(marker);
-  }, [marker]);
   return (
     <>
       <Grid container>

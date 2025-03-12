@@ -8,6 +8,7 @@ import "./styles/components.scss";
 import MainMap from "./map/MainMap";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Upload from "./main/uploads/Upload";
+import Admin from "./main/admin/Admin";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Routes>
           <Route path="/" element={<MainMap />} />
           <Route path="/upload" element={<Upload />} />
+          <Route path="/manager" element={<Admin />} />
         </Routes>
       </BrowserRouter>
     </>
